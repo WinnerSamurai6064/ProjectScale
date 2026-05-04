@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeStandAd | Advanced Image Processing</title>
+  <link rel="stylesheet" href="/style.css">
+  <!-- Vital for Wasm threading on GitHub Pages -->
+  <script src="coi-serviceworker.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="glass-panel">
+      <h1>DeStandAd Pipeline</h1>
+      
+      <div class="controls">
+        <input type="file" id="imageUpload" accept="image/*" />
+        
+        <select id="processMode">
+          <option value="bicubic">Math Upscale (Bicubic/Lanczos)</option>
+          <option value="resrgan">AI Upscale (R-ESRGAN)</option>
+          <option value="colorfix">ColorFix + ICC Profile</option>
+          <option value="iphone6">iPhone 6s Filter (Hardware Limitation)</option>
+        </select>
+        
+        <button id="processBtn">Process Image</button>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="outputCanvas"></canvas>
+      </div>
+      
+      <p id="statusMsg"></p>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
